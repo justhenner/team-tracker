@@ -7,5 +7,5 @@ const db = mysql.createConnection(
     database: "team_db",
     multipleStatements: true
   },
-  console.log(`Success! You're connected to team_db.`)
+  console.log(`Success! You're connected to team_db database.`)
 );
