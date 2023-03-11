@@ -1,14 +1,8 @@
 {
-  "name": "team-tracker",
+  "name": "employee-tracker",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {
-    "console.table": "^0.10.0",
-    "express": "^4.17.1",
-    "inquirer": "^8.2.4",
-    "mysql2": "^3.1.0"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
@@ -18,10 +12,16 @@
     "type": "git",
     "url": "git+https://github.com/justhenner/team-tracker.git"
   },
-  "author": "justhenner",
+  "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/justhenner/team-tracker"
+    "url": "https://github.com/justhenner/team-tracker/issues"
   },
-  "homepage": "https://github.com/justhenner/team-tracker#readme"
+  "homepage": "https://github.com/justhenner/team-tracker#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "express": "^4.17.1",
+    "inquirer": "^8.2.4",
+    "mysql2": "^3.1.0"
+  }
 }

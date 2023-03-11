@@ -9,3 +9,5 @@ const db = mysql.createConnection(
   },
   console.log(`Success! You're connected to team_db database.`)
 );
+
+module.exports = db;

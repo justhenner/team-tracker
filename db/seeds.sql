@@ -1,17 +1,17 @@
-INSERT INTO departments (department_name)
+INSERT INTO department (name)
 VALUES  ("Sales"),
         ("Engineering"),
         ("Finance"),
         ("Legal"), 
-        ("Marketing"),
+        ("Marketing");
 
 
-INSERT INTO roles (title, salary, department_id)
+INSERT INTO role (title, salary, department_id)
 VALUES  ("Salesperson", 80000, 1),
-        ("Head of Sales" 120000, 1),
-        ("Lead Engineer", 150000, 2),
-        ("Software Engineer", 120000, 2),
-        ("Financial Analyst", 130000, 3),
+        ("Head of Sales", 120000, 2),
+        ("Lead Engineer", 150000, 3),
+        ("Software Engineer", 120000, 4),
+        ("Financial Analyst", 130000, 5),
         ("Chief Financial Officer", 170000, 3),
         ("Head of Legal", 25000, 4),
         ("Lawyer", 190000, 4),
@@ -19,13 +19,19 @@ VALUES  ("Salesperson", 80000, 1),
         ("Head of Marketing", 155000, 5);
 
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
-VALUES  ("Mike", "Chan", 1, 2), 
-        ("Ashley", "Rodriguez", 2, null),
-        ("Kevin", "Tupik", 3, null), 
-        ("Kunal", "Singh", 4, 3),
-        ("Malia", "Brown", 5, 6),
-        ("Sarah", "Lourd", 6, null),
-        ("Tom", "Allen", 7, null),
-        ("Jim", "Tracy", 8, 7),
-        ("Jose", "Morales", 9, 10),
-        ("Sandra", "Richards", 10, null);
+VALUES ("Sean", "Smith", 1, 1),
+       ("Mary", "Chen", 2, 1),
+       ("Ashton", "Rodrigues", 3, 3),
+       ("Melvin", "Rapik", 4, 3),
+       ("Luna", "Singh", 5, 5),
+       ("Malia", "Brown", 6, 5),
+       ("Sasha", "Lawrd", 7, 7),
+       ("Tim", "Allen", 8, 7);
+
+SELECT r.id, r.title, d.name as department, r.salary 
+FROM role AS r
+JOIN department AS d on d.id = r.department_id;
+
+SELECT e.id, e.first_name, e.last_name, e.role_id, e.manager_id
+FROM employee AS e
+       
