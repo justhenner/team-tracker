@@ -21,3 +21,7 @@ VALUES  ("Mike", "Chan"),
         ("Malia", "Brown"),
         ("Sarah", "Lourd"),
         ("Tom", "Allen");
+
+SELECT * 
+FROM roles,
+INNER JOIN departments ON roles.department_id = departments.id;
