@@ -172,3 +172,51 @@ const viewEmployees = () => {
     });
 };
 
+const startsPrompts = () => {
+    return inquirer
+    .prompt([
+        {
+            name: "selection",
+            type: "list",
+            message: "Select an action",
+            choices: [
+                "View all departments",
+                "View all roles",
+                "View all employees",
+                "Add department",
+                "Add role",
+                "Add employee",
+                "Update employee role",
+            ],
+        },
+    ])
+    .then((chosen) => {
+        switch (chosen.selection) {
+            case "View all departments":
+                viewDepartments(startsPrompts);
+                break;
+            case "View all roles":
+                viewRoles();
+                break;
+            case "View all employees":
+                viewEmployees();
+                break;
+            case "Add department":
+                addDepartment();
+                break;
+            case "Add role":
+                addRole();
+                break;
+            case "Add employee":
+                addEmployee();
+                break;
+            case "Update employee role":
+                updateEmployeeRole();
+                break;
+            default:
+                startsPrompts();
+        }
+    });
+};
+
+startsPrompts();
