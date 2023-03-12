@@ -50,3 +50,52 @@ const addRole = () => {
         });
     });
 };
+
+const addEmployee = () => {
+    let role = new Role();
+role.getRoles().then((role) => {
+    let employee = new Employee();
+    employee.getEmployees().then((employee) => {
+return inquirer
+    .prompt([
+        {
+            name: "first_name",
+            type: "input", 
+            message: "Insert employee's first name",
+        },
+        {
+            name: "last_name", 
+            type: "input", 
+            message: "Insert employee's last name",
+        },
+        {
+            name: "role_id",
+            type: "list",
+            message: "Select the employee's role",
+            choices: role.map((r) => {
+                return `${r.id}. ${r.title}`;
+            }),
+        },
+        {
+            name: "manager_id",
+            type: "list",
+            message: "Select the employee's manager",
+            choices: employee.map((e) => {
+                return `${e.id} ${e.first_name} ${e.last_name}`;
+            }),
+        },
+    ])
+    .then(function ({ first_name, last_name, role_id, manager_id }) {
+        const employee = new Employee(
+            null, 
+            first_name,
+            lat_name, 
+            role_id, 
+            manager_id
+        );
+        employee.addEmployee;
+        startsPrompts();
+    });
+});
+});
+};
