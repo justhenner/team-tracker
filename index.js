@@ -89,7 +89,7 @@ return inquirer
         const employee = new Employee(
             null, 
             first_name,
-            lat_name, 
+            last_name, 
             role_id, 
             manager_id
         );
@@ -165,7 +165,7 @@ const viewEmployees = () => {
     .getEmployees()
     .then((rows) => {
         console.log("View all employees");
-        conosle.table(rows);
+        console.table(rows);
     })
     .then(() => {
         startsPrompts();
