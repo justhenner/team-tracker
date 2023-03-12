@@ -99,3 +99,36 @@ return inquirer
 });
 });
 };
+
+const updateEmployeeRole = () => {
+    let role = new Role();
+    role.getRoles().then((role) => {
+        let employee = new Employee();
+        employee.getEmployees().then((employee) => {
+            return inquirer 
+            .prompt([
+                {
+                    name: "employee",
+                    type: "list", 
+                    message: "Select the employee that needs their role updated",
+                    choices: employee.map((e) => {
+                        return ` ${e.id} ${e.first_name} ${e.last_name}`;
+                    }),
+                },
+                {
+                    name: "role",
+                    type: "list",
+                    message: "Select the role which you'd like to assign to the employee",
+                    choices: role.map((r) => {
+                        return `${r.id}. ${r.title}`;
+                    }),
+                },
+            ])
+            .then(function ({ employee, role}) {
+                employee = new Employee().updateEmployee
+                console.log("Employee's role is successfully updated!");
+            startsPrompts();
+            });
+        });
+    });
+};
