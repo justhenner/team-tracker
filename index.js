@@ -17,7 +17,7 @@ function addDepartment() {
         department.addDepartment();
         startsPrompts();
     });
-}
+};
 
 const addRole = () => {
     let department = new Department();
@@ -132,3 +132,43 @@ const updateEmployeeRole = () => {
         });
     });
 };
+
+function viewDepartments() {
+    let department = new Department();
+    department
+    .getDepartments()
+    .then((rows) => {
+        console.log("View all departments");
+        console.table(rows);
+    })
+    .then(() => {
+        startsPrompts();
+    });
+};
+
+const viewRoles = () => {
+    let role = new Role();
+    role 
+    .getRoles()
+    .then((rows) => {
+        console.log("View all roles");
+        console.table(rows);
+    })
+    .then(() => {
+        startsPrompts();
+    });
+};
+
+const viewEmployees = () => {
+    let employee = new Employee();
+    employee
+    .getEmployees()
+    .then((rows) => {
+        console.log("View all employees");
+        conosle.table(rows);
+    })
+    .then(() => {
+        startsPrompts();
+    });
+};
+
